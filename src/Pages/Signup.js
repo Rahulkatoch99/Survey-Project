@@ -1,15 +1,15 @@
 import React from "react";
-import { Logincard } from "../cards/Logincard";
+import { SignupCard } from "../cards/SignupCard";
 import { FouterSection } from "../Components.js/FouterSection";
-import { LoginSection } from "../Components.js/LoginSection";
+import { SignupSection } from "../Components.js/SignupSection";
 import { MyNavbar } from "./nav";
 
-export const Login = () => {
+export const Signup = () => {
   return (
     <>
       <MyNavbar />
-      <LoginSection />
-      <Logincard />
+      <SignupSection />
+      <SignupCard />
       <FouterSection />
     </>
   );

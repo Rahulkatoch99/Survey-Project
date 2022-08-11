@@ -3,12 +3,26 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 
 export const MyNavbar = () => {
+  const navigate = useNavigate();
+
+  const Loginclick = () => {
+    navigate("/Login");
+  };
+
+  const SignupClick = () => {
+    navigate("/Signup");
+  };
+
+  const HomeClick = () => {
+    navigate("/");
+  };
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand onClick={HomeClick}>Navbar scroll</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -16,15 +30,19 @@ export const MyNavbar = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            <Nav.Link onClick={HomeClick}>Home</Nav.Link>
             <Nav.Link href="#action2">About Us</Nav.Link>
             <Nav.Link href="#action3">How It Works</Nav.Link>
             <Nav.Link href="#action4">Our Rewards</Nav.Link>
             <Nav.Link href="#action5">Contact Us</Nav.Link>
           </Nav>
 
-          <Button variant="outline-primary">Login</Button>
-          <Button variant="outline-danger">Signup</Button>
+          <Button onClick={Loginclick} variant="outline-primary">
+            Login
+          </Button>
+          <Button onClick={SignupClick} variant="outline-danger">
+            Signup
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
